@@ -8,9 +8,7 @@ namespace Business.Abstract
 {
     public interface ICarService
     {
-        void TyeRecognition();
-
-
+       
         List<Car> GetAll();
 
 

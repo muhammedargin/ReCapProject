@@ -10,7 +10,7 @@ namespace DataAccess.Concrete
 {
     public class InMemoryCarDal : ICarDal
     {
-        List<Car> _cars;
+        static  List<Car> _cars;
 
         public InMemoryCarDal()
         {
@@ -28,7 +28,8 @@ namespace DataAccess.Concrete
 
         public void Add(Car car)
         {
-            _cars.Add(car); 
+            _cars.Add(car);
+            Console.WriteLine("Taşıt Eklendi");
         }
 
         public void Delete(Car car)

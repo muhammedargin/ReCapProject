@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using Business.Concrete;
 using DataAccess.Concrete;
+using Entities;
 using Entities.Absract;
 using Entities.Concrete;
 
@@ -11,14 +14,21 @@ namespace UIConsole
         static void Main(string[] args)
         {
 
-            CarManager carManager = new CarManager(new InMemoryCarDal());
-            int i = 0;
-            foreach (var car in carManager.GetAll())
-            {
-                Console.WriteLine("{0}.Araç: {1}",i,car.Description);
-                i++;
-            }
-
+            AdminMenuManager adminMenuManager = new AdminMenuManager();
+            adminMenuManager.MenuForAdmin();
+            
         }
+        
+        
+
+     
+
+
+
+
+        
     }
 }
+
+
+
