@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Abstract
+namespace DataAccess.Concrete.EntityFramework
 {
-    interface IMenuService
+    class EfBrandDal
     {
-
-
     }
 }

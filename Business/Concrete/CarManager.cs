@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,40 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+
+        public void Add(Car car)
+        {
+            _carDal.Add(car);
+        }
+
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+
         public List<Car> GetAll()
         {
-
             return _carDal.GetAll();
         }
 
-       
+        public List<Car> GetByAscPrice()
+        {
+            return _carDal.GetByAscPrice();
+        }
 
-      
+        public List<Car> GetByDescPrice()
+        {
+            return _carDal.GetByDescPrice();
+        }
+
+        public List<Car> GetById(int Id)
+        {
+            return _carDal.GetById(Id);
+        }
+
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
+        }
     }
 }

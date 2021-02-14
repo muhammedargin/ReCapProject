@@ -15,8 +15,8 @@ namespace DataAccess.Abstract
         List<Car> GetById(int Id);
 
         List<Car> GetAll();
-
-        
+        List<Car> GetByAscPrice();
+        List<Car> GetByDescPrice();
 
 
 
