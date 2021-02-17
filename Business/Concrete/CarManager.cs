@@ -18,7 +18,14 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            _carDal.Add(car);
+            if (car.DailyPrice>0 && car.BrandId>0 && car.Descriptions.Length>15)
+            {
+                _carDal.Add(car);
+            }
+            else
+            {
+                Console.WriteLine("Kurallara uyulmadığından araç eklenemedi.");
+            }
         }
 
         public void Delete(Car car)
@@ -26,29 +33,34 @@ namespace Business.Concrete
             _carDal.Delete(car);
         }
 
+        public Car GetThisCar(Car car)
+        {
+            return _carDal.Get();
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }
 
-        public List<Car> GetByAscPrice()
+        public List<Car> GetCarsByBrandId(int id)
         {
-            return _carDal.GetByAscPrice();
+            return _carDal.GetAll(p=> p.BrandId == id);
         }
 
-        public List<Car> GetByDescPrice()
+        public List<Car> GetCarsByColorId(int id)
         {
-            return _carDal.GetByDescPrice();
-        }
-
-        public List<Car> GetById(int Id)
-        {
-            return _carDal.GetById(Id);
+            return _carDal.GetAll(p =>p.ColorId==id);
         }
 
         public void Update(Car car)
         {
             _carDal.Update(car);
+        }
+
+        public Car GetThisCar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

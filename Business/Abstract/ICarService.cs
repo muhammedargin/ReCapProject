@@ -1,4 +1,5 @@
 ﻿using DataAccess.Abstract;
+using Entities.Absract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,15 @@ namespace Business.Abstract
 {
     public interface ICarService
     {
-       
-        List<Car> GetAll();
-        List<Car> GetById(int Id);
-        List<Car> GetByAscPrice();
-        List<Car> GetByDescPrice();
         void Add(Car car);
-        void Update(Car car);
         void Delete(Car car);
+        void Update(Car car);
+        List<Car> GetAll();
+        Car GetThisCar();
+        List<Car> GetCarsByBrandId(int id);
+        List<Car> GetCarsByColorId(int id);
+
+
 
     }
 }
