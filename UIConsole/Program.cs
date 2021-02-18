@@ -21,15 +21,34 @@ namespace UIConsole
             {
                 Console.WriteLine(item.Descriptions);
             }
-
+            carManager.Add(new Car
+            {
+                //niye 1002 oluyor ??
+                BrandId = 2,
+                ColorId = 3,
+                ModelYear = "2011",
+                DailyPrice = 9999,
+                Descriptions = "yeni eklediğim"
+            });
 
             Console.WriteLine("------------------------------");
 
-            foreach (var item in carManager.GetCarsByBrandId(1))
+            carManager.Delete(new Car
             {
-                Console.WriteLine(item.Descriptions+" : "+item.BrandId);
-            }
+                CarId=2002,//niye 1002 VB oluyor ??
+                BrandId = 2,
+                ColorId = 3,
+                ModelYear = "2011",
+                DailyPrice = 9999,
+                Descriptions = "yeni eklediğim"
+            });
 
+            Console.WriteLine( "---------------------------" );
+
+            foreach (var item in carManager.GetAll())
+            {
+                Console.WriteLine(item.Descriptions);
+            }
 
         }
         
